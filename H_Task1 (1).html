@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание</title>
+</head>
+<style>
+ul li{
+    position: relative;
+    width:100%;
+    background: #ff4b65;
+    height:30px;
+    text-align: center;
+}
+a{
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+}
+li:hover{
+    background: #ff2148;
+}
+.first-level li{
+    display: inline-block;
+    width:120px;
+}
+.second-level{
+    display: none;
+    position: absolute;
+    z-index:10;
+    padding-left: 0;
+}
+.third-level{
+    display: none;
+    position: absolute;
+    left: 80px;
+    z-index:20;
+    top:0;
+
+}
+.third-level li{
+    width:150px;
+}
+</style>
+<body>
+<p>Создайте двухуровневое меню. Меню должно открываться при наведении и клике. Закрываться – когда объект теряет фокус.
+</p>
+<!--Разметка-->
+<ul class="first-level">
+    <li><a href="#">menu-item 1</a></li>
+    <li><a href="#">menu-item 2</a>
+        <ul class="second-level">
+            <li><a href="#">sub menu-item 1</a></li>
+            <li><a href="#">sub menu-item 2</a>
+                <ul class="third-level">
+                    <li><a href="#">sub-sub menu-item 1</a></li>
+                    <li><a href="#">sub-sub menu-item 2</a></li>
+                    <li><a href="#">sub-sub menu-item 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">sub menu-item 3</a></li>
+            <li><a href="#">sub menu-item 4</a></li>
+        </ul>
+    </li>
+    <li><a href="#">menu-item 3</a></li>
+    <li><a href="#">menu-item 4</a>
+        <ul class="second-level">
+            <li><a href="#">sub menu-item 1</a></li>
+            <li><a href="#">sub menu-item 2</a>
+                <ul class="third-level">
+                    <li><a href="#">sub-sub menu-item 1</a></li>
+                    <li><a href="#">sub-sub menu-item 2</a></li>
+                    <li><a href="#">sub-sub menu-item 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">sub menu-item 3</a></li>
+            <li><a href="#">sub menu-item 4</a>
+                <ul class="third-level">
+                    <li><a href="#">sub-sub menu-item 1</a></li>
+                    <li><a href="#">sub-sub menu-item 2</a></li>
+                    <li><a href="#">sub-sub menu-item 3</a></li>
+                </ul></li>
+        </ul></li>
+    <li><a href="#">menu-item 5</a></li>
+</ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.first-level li').on('click', function () {
+            $('.second-level').css('display','none');
+            $(this).find('.second-level').css('display','block');
+        });
+
+        $('.second-level li').hover(liHover, liOut);
+
+        function liHover () {
+            $(this).find('.third-level').css('display','block');
+        }
+        function liOut () {
+            $(this).find('.third-level').css('display','none');
+        }
+    });
+</script>
+</body>
+</html>
