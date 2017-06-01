@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Домашняя работа</title>
+</head>
+<body>
+<h1>Задание 2</h1>
+<p>В папке Homework откройте файл “H_Task1.html”. В этом файле Вам нужно вставить в див неупорядоченный список на 3 элемента средствами библиотеки JQuery.
+</p>
+
+<div></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+       addLi(3);
+       function addLi(n) {
+           $('div').append('<ul>New ul</ul>');
+           for(var i=1; i<=n; i++){
+               $('ul').append('<li>test '+ i +'</li>');
+           }
+       }
+
+    });
+    console.log('test');
+
+
+</script>
+</body>
+</html>

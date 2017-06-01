@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Домашняя работа</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Задание 3</h1>
+    <p>В папке Homework откройте файл “H_Task2.html”. В этом файле Вам нужно выбрать параграф и затем закрасить его
+        родительский элемент красным цветом. библиотеки JQuery.
+    </p>
+    <div>
+        <p>Paragraph 1</p>
+    </div>
+    <div>
+        <span>Span 1</span>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('p').parent().css('color', 'red')
+
+        });
+    </script>
+</body>
+</html>
